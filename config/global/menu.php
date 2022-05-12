@@ -383,6 +383,7 @@ return array(
         array(
             'title'      => 'System',
             'classes'    => array('item' => 'menu-lg-down-accordion me-lg-1', 'arrow' => 'd-lg-none'),
+            'role' => 'superadmin',
             'attributes' => array(
                 'data-kt-menu-trigger'   => "click",
                 'data-kt-menu-placement' => "bottom-start",
@@ -416,6 +417,13 @@ return array(
                     ),
                 ),
             ),
+        ),
+
+        //team
+        array(
+            'title'      => 'Mijn team',
+            'classes'    => array('item' => 'me-lg-1'),
+            'path'   => 'teams/huidig',
         ),
     ),
 );

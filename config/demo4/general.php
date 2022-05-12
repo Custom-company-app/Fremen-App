@@ -26,7 +26,7 @@ return array(
         'main'       => array(
             'type'              => 'default', // Set layout type: default|blank|none
             'dark-mode-enabled' => false, // Enable optioanl dark mode mode
-            'primary-color'     => '#7239EA',
+            'primary-color'     => '#7C2A8B',
         ),
 
         // Loader

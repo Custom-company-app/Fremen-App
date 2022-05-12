@@ -477,6 +477,7 @@ class Theme extends \App\Core\Theme
 
         if (isset($menus['path'])) {
             $output[] = $menus;
+
         }
 
         if (is_array($menus)) {

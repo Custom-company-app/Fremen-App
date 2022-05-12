@@ -5,10 +5,15 @@ namespace App\Models;
 use App\Core\Traits\SpatieLogsActivity;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
+use Avatar;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Spatie\Image\Manipulations;
 
-class UserInfo extends Model
+class UserInfo extends Model implements HasMedia
 {
-    use SpatieLogsActivity;
+    use SpatieLogsActivity, InteractsWithMedia;
 
     /**
      * Prepare proper error handling for url attribute
@@ -21,16 +26,24 @@ class UserInfo extends Model
         $avatar = public_path(Storage::url($this->avatar));
         if (is_file($avatar) && file_exists($avatar)) {
             // get avatar url from storage
-            return Storage::url($this->avatar);
+            return Storage::url($this->avatar());
         }
 
         // check if the avatar is an external url, eg. image from google
         if (filter_var($this->avatar, FILTER_VALIDATE_URL)) {
-            return $this->avatar;
+            return $this->avatar();
         }
 
         // no avatar, return blank avatar
-        return asset(theme()->getMediaUrlPath().'avatars/blank.png');
+        return Avatar::create('Joko Widodo')->toBase64();
+    }
+
+    public function registerMediaConversions(Media $media = null): void
+    {
+        $this
+            ->addMediaConversion('thumb')
+            ->fit(Manipulations::FIT_CROP, 250, 250)
+            ->nonQueued();
     }
 
     /**

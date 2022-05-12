@@ -7,13 +7,16 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Spatie\Permission\Traits\HasRoles;
+use Laratrust\Traits\LaratrustUserTrait;
+use Mpociot\Teamwork\Traits\UserHasTeams;
+use Avatar;
+
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasFactory, Notifiable;
+    use LaratrustUserTrait;
+    use HasFactory, Notifiable, UserHasTeams;
     use SpatieLogsActivity;
-    use HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -52,6 +55,8 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->remember_token;
     }
 
+
+
     public function setRememberToken($value)
     {
         $this->remember_token = $value;
@@ -74,11 +79,20 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     public function getAvatarUrlAttribute()
     {
-        if ($this->info) {
-            return asset($this->info->avatar_url);
+        if ($this->info->avatar) {
+            $url = $this->info->getFirstMediaUrl('avatar', 'thumb');
+            return $url;
         }
 
-        return asset(theme()->getMediaUrlPath().'avatars/blank.png');
+        $avatar = Avatar::create($this->name)->toBase64();
+
+        $this->info->addMediaFromBase64($avatar)->toMediaCollection('avatar');
+        $this->info->avatar = true;
+
+        $this->info->save();
+        $url = $this->info->getFirstMediaUrl('avatar', 'thumb');
+
+        return $url;
     }
 
     /**
@@ -89,5 +103,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function info()
     {
         return $this->hasOne(UserInfo::class);
+    }
+
+    public function getId()
+    {
+        return $this->id;
     }
 }

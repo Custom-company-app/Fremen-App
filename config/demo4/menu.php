@@ -87,7 +87,7 @@ return array(
                     "data-kt-menu-flip"      => "bottom",
                 ),
                 'link' => array(
-                    "title"             => "Account",
+                    "title"             => "System",
                     "data-bs-toggle"    => "tooltip",
                     "data-bs-trigger"   => "hover",
                     "data-bs-dismiss"   => "click",
@@ -95,6 +95,7 @@ return array(
                 ),
             ),
             "arrow"            => false,
+            "role" => "superadmin",
             "sub"              => array(
                 "class" => "menu-sub-dropdown w-225px px-1 py-4",
                 "items" => array(

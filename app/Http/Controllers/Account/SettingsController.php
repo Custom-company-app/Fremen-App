@@ -7,8 +7,12 @@ use App\Http\Requests\Account\SettingsEmailRequest;
 use App\Http\Requests\Account\SettingsInfoRequest;
 use App\Http\Requests\Account\SettingsPasswordRequest;
 use App\Models\UserInfo;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+
+use Config;
 
 class SettingsController extends Controller
 {
@@ -19,7 +23,6 @@ class SettingsController extends Controller
      */
     public function index()
     {
-        $info = auth()->user()->info;
 
         // get the default inner page
         return view('pages.account.settings.settings', compact('info'));
@@ -61,13 +64,14 @@ class SettingsController extends Controller
             $info->$key = $value;
         }
 
-        // include to save avatar
-        if ($avatar = $this->upload()) {
-            $info->avatar = $avatar;
+        if($request->hasFile('avatar') && $request->file('avatar')->isValid()){
+            $info->media()->delete();
+            $info->addMediaFromRequest('avatar')->toMediaCollection('avatar');
+            $info->avatar = true;
         }
 
         if ($request->boolean('avatar_remove')) {
-            Storage::delete($info->avatar);
+            $info->media()->delete();
             $info->avatar = null;
         }
 

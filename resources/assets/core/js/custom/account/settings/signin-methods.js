@@ -60,10 +60,10 @@ var KTAccountSettingsSigninMethods = function () {
                     emailaddress: {
                         validators: {
                             notEmpty: {
-                                message: 'Email is required'
+                                message: 'Emailadres is verplicht'
                             },
                             emailAddress: {
-                                message: 'The value is not a valid email address'
+                                message: 'Dit is geen geldig emailadres'
                             }
                         }
                     },
@@ -71,7 +71,7 @@ var KTAccountSettingsSigninMethods = function () {
                     confirmemailpassword: {
                         validators: {
                             notEmpty: {
-                                message: 'Password is required'
+                                message: 'Wachtwoord is verplicht'
                             }
                         }
                     }

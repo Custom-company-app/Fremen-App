@@ -88,6 +88,7 @@ return array(
         ),
         'system' => array(
             'title'  => 'System Log',
+
             'assets' => array(
                 'custom' => array(
                     'css' => array(
@@ -100,6 +101,7 @@ return array(
             ),
         ),
     ),
+
 
     'account' => array(
         'overview' => array(
@@ -136,6 +138,25 @@ return array(
 
             'edit' => array(
                 'title' => 'Edit User',
+            ),
+        ),
+    ),
+
+    'teams'         => array(
+        'huidig' => array(
+            'title'  => 'Huidig team',
+
+            'assets' => array(
+                'custom' => array(
+                    'css' => array(
+                        'plugins/custom/datatables/datatables.bundle.css',
+
+                    ),
+                    'js'  => array(
+                        'plugins/custom/datatables/datatables.bundle.js',
+                        'js/custom/apps/user-management/users/list/table.js',
+                    ),
+                ),
             ),
         ),
     ),

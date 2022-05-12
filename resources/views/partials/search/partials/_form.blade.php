@@ -5,7 +5,7 @@
     <!--end::Icon-->
 
     <!--begin::Input-->
-    <input type="text" class="form-control form-control-flush ps-10" name="search" value="" placeholder="Search..." data-kt-search-element="input"/>
+    <input type="text" class="form-control form-control-flush ps-10" name="search" value="" placeholder="{{__('Zoeken...')}}" data-kt-search-element="input"/>
     <!--end::Input-->
 
     <!--begin::Spinner-->
