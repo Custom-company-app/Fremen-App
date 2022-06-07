@@ -125,70 +125,39 @@
     <div class="menu-item px-5" data-kt-menu-trigger="hover" data-kt-menu-placement="left-start">
         <a href="#" class="menu-link px-5">
             <span class="menu-title position-relative">
-                {{ __('Language') }}
+                 @php $locale = session()->get('locale');
+if(!$locale){$locale = config('app.fallback_locale');}
+                 $flag = config('app.supported_locales.'.$locale.'.flag');
+                 @endphp
+                {{ __('Taal') }}
 
                 <span class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0">
-                    {{ __('English') }} <img class="w-15px h-15px rounded-1 ms-2" src="{{ asset(theme()->getMediaUrlPath() . 'flags/united-states.svg') }}" alt="metronic"/>
+                   {{config('app.supported_locales.'.$locale.'.name') }} <img class="w-15px h-15px rounded-1 ms-2" src="{{ asset(theme()->getMediaUrlPath() . 'flags/'.$flag.'.svg') }}" alt="metronic"/>
                 </span>
             </span>
         </a>
 
+
+
         <!--begin::Menu sub-->
         <div class="menu-sub menu-sub-dropdown w-175px py-4">
             <!--begin::Menu item-->
-            <div class="menu-item px-3">
-                <a href="#" class="menu-link d-flex px-5 active">
+            @foreach(config('app.supported_locales') as $language)
+                <div class="menu-item px-3">
+                    <a href="{{ route('language',$language['url']) }}" class="menu-link d-flex px-5   {{$language['url'] === $locale ? "active" : ""}} ">
                     <span class="symbol symbol-20px me-4">
-                        <img class="rounded-1" src="{{ asset(theme()->getMediaUrlPath() . 'flags/united-states.svg') }}" alt="metronic"/>
+                        <img class="rounded-1" src="{{ asset(theme()->getMediaUrlPath() . 'flags/'.$language['flag'].'.svg') }}" alt="metronic"/>
                     </span>
-                    {{ __('English') }}
-                </a>
-            </div>
+                        {{ $language['name'] }}
+                    </a>
+                </div>
+
+            @endforeach
+
             <!--end::Menu item-->
 
-            <!--begin::Menu item-->
-            <div class="menu-item px-3">
-                <a href="#" class="menu-link d-flex px-5">
-                    <span class="symbol symbol-20px me-4">
-                        <img class="rounded-1" src="{{ asset(theme()->getMediaUrlPath() . 'flags/spain.svg') }}" alt="metronic"/>
-                    </span>
-                    {{ __('Spanish') }}
-                </a>
-            </div>
-            <!--end::Menu item-->
 
-            <!--begin::Menu item-->
-            <div class="menu-item px-3">
-                <a href="#" class="menu-link d-flex px-5">
-                    <span class="symbol symbol-20px me-4">
-                        <img class="rounded-1" src="{{ asset(theme()->getMediaUrlPath() . 'flags/germany.svg') }}" alt="metronic"/>
-                    </span>
-                    {{ __('German') }}
-                </a>
-            </div>
-            <!--end::Menu item-->
 
-            <!--begin::Menu item-->
-            <div class="menu-item px-3">
-                <a href="#" class="menu-link d-flex px-5">
-                    <span class="symbol symbol-20px me-4">
-                        <img class="rounded-1" src="{{ asset(theme()->getMediaUrlPath() . 'flags/japan.svg') }}" alt="metronic"/>
-                    </span>
-                    {{ __('Japanese') }}
-                </a>
-            </div>
-            <!--end::Menu item-->
-
-            <!--begin::Menu item-->
-            <div class="menu-item px-3">
-                <a href="#" class="menu-link d-flex px-5">
-                    <span class="symbol symbol-20px me-4">
-                        <img class="rounded-1" src="{{ asset(theme()->getMediaUrlPath() . 'flags/france.svg') }}" alt="metronic"/>
-                    </span>
-                    {{ __('French') }}
-                </a>
-            </div>
-            <!--end::Menu item-->
         </div>
         <!--end::Menu sub-->
     </div>

@@ -285,7 +285,7 @@
 
             <!--begin::Actions-->
             <div class="card-footer d-flex justify-content-end py-6 px-9">
-                <button type="reset" class="btn btn-white btn-active-light-primary me-2">{{ __('Discard') }}</button>
+                <button type="reset" class="btn btn-white btn-active-light-primary me-2">{{ __('Annuleer') }}</button>
 
                 <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">
                     @include('partials.general._button-indicator', ['label' => __('Opslaan')])

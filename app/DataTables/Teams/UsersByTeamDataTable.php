@@ -12,6 +12,7 @@ use Yajra\DataTables\Services\DataTable;
 use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\Html\Column;
 use Config;
+use App;
 
 class UsersByTeamDataTable extends DataTable
 {
@@ -41,7 +42,16 @@ class UsersByTeamDataTable extends DataTable
                 $role = $user->roles()->wherePivot(Config::get('laratrust.foreign_keys.team'), $teamuser->current_team_id)->first();
 
                 if ($role){
-                    return $role->name;
+                    $roles = [
+                        'administrator' => __('Super admin'),
+                        'companyadministrator'     => __('Bedrijfs administrator'),
+                        'teamadministrator'  => __('Team administrator'),
+                        'companyuser'     => __('Medewerker'),
+                        'companyclient'   => __('Klant'),
+                        'user'    => __('Gebruiker'),
+                    ];
+                    $value = $roles[$role->name];
+                    return $value;
                 }
 
             })
@@ -80,7 +90,7 @@ class UsersByTeamDataTable extends DataTable
                 $user =  User::find($userid);
 
 
-                return $user->info->company;
+                return $user->company->name;
             })
             ->addColumn('action', function (Collection $model) {
                 return view('teamwork.partials._action-menu', compact('model'));
@@ -116,6 +126,9 @@ class UsersByTeamDataTable extends DataTable
      */
     public function html()
     {
+        $locale = App::getLocale();
+        $language = Config::get('app.supported_locales.'.$locale.'.urldatatables');
+
         return $this->builder()
             ->setTableId('table-team-members')
             ->columns($this->getColumns())
@@ -124,6 +137,7 @@ class UsersByTeamDataTable extends DataTable
             ->parameters([
                 'scrollX'      => true,
                 'drawCallback' => 'function() { KTMenu.createInstances(); }',
+                'language' => ['url' => $language]
             ])
             ->orderBy(0)
             ->responsive()

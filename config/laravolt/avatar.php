@@ -17,7 +17,7 @@ return [
     | Supported: "gd", "imagick"
     |
     */
-    'driver' => env('IMAGE_DRIVER', 'gd'),
+    'driver' => env('IMAGE_DRIVER', 'imagick'),
 
     // Initial generator class
     'generator' => \Laravolt\Avatar\Generator\DefaultGenerator::class,
@@ -29,26 +29,26 @@ return [
     'shape' => 'circle',
 
     // Image width, in pixel
-    'width' => 300,
+    'width' => 750,
 
     // Image height, in pixel
-    'height' => 300,
+    'height' => 750,
 
     // Number of characters used as initials. If name consists of single word, the first N character will be used
     'chars' => 2,
 
     // font size
-    'fontSize' => 112,
+    'fontSize' => 300,
 
     // convert initial letter in uppercase
-    'uppercase' => false,
+    'uppercase' => true,
 
     // Right to Left (RTL)
     'rtl' => false,
 
     // Fonts used to render text.
     // If contains more than one fonts, randomly selected based on name supplied
-    'fonts' => [__DIR__ . '/../fonts/OpenSans-Bold.ttf', __DIR__ . '/../fonts/rockwell.ttf'],
+    'fonts' => ['https://fonts.googleapis.com/css2?family=Encode+Sans:wght@900'],
 
     // List of foreground colors to be used, randomly selected based on name supplied
     'foregrounds' => [
@@ -81,7 +81,7 @@ return [
         // 'foreground' (same as foreground color)
         // 'background' (same as background color)
         // or any valid hex ('#aabbcc')
-        'color' => 'background',
+        'color' => '#3d174f',
 
         // border radius, currently only work for SVG
         'radius' => 0,
@@ -92,7 +92,7 @@ return [
     // 1. Theme name as string: 'colorful'
     // 2. Or array of string name: ['grayscale-light', 'grayscale-dark']
     // 3. Or wildcard "*" to use all defined themes
-    'theme' => ['colorful'],
+    'theme' => ['pastel'],
 
     // Predefined themes
     // Available theme attributes are:

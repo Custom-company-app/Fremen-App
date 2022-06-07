@@ -12,32 +12,41 @@ return [
     'truncate_tables' => true,
 
     'roles_structure' => [
-        'superadministrator' => [
-            'gebruikers' => 'c,r,u,d',
-            'teams' => 'c,r,u,d',
-            'instellingen' => 'c,r,u,d',
-            'profiel' => 'c,r,u,d'
-        ],
         'administrator' => [
-            'gebruikers' => 'c,r,u,d',
+            'users' => 'c,r,u,d',
             'teams' => 'c,r,u,d',
-            'profiel' => 'r,u'
+            'profile' => 'c,r,u',
+            'company' => 'c,r,u,d',
         ],
-        'teamadmin' => [
+        'companyadministrator' => [
             'users' => 'c,r,u',
-            'teams' => 'c,r,u,d',
-            'profiel' => 'r,u'
+            'teams' => 'c,r,u',
+            'profile' => 'c,r,u',
+            'company' => 'c,r,u',
         ],
-        'teamuser' => [
-            'users' => 'r',
-            'profiel' => 'r,u'
+        'teamadministrator' => [
+            'users' => 'c,r,u',
+            'teams' => 'c,r,u',
+            'profile' => 'c,r,u',
+            'company' => 'r',
         ],
-        'teamclient' => [
+        'companyuser' => [
+            'users' => 'r,u',
+            'profile' => 'r,u',
+            'teams' => 'c,r,u',
+            'company' => 'r',
+        ],
+        'companyclient' => [
             'users' => 'r',
-            'profiel' => 'r,u'
+            'profile' => 'r,u',
+            'teams' => 'r',
+            'company' => 'r',
         ],
         'user' => [
-            'profiel' => 'r,u',
+            'users' => 'r',
+            'profile' => 'r,u',
+            'teams' => 'r',
+            'company' => 'r',
         ],
     ],
 

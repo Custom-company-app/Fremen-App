@@ -105,6 +105,17 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasOne(UserInfo::class);
     }
 
+    /**
+     * User relation to company model
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class,'company_id');
+    }
+
     public function getId()
     {
         return $this->id;

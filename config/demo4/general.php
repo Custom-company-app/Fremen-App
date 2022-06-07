@@ -5,7 +5,7 @@ return array(
         'favicon' => 'media/logos/favicon.ico',
         'fonts'   => array(
             'google' => array(
-                'Poppins:300,400,500,600,700',
+                'Encode+Sans:300,400,500,600,700',
             ),
         ),
         'css'     => array(

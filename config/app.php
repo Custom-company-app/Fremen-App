@@ -95,6 +95,21 @@ return [
 
     'fallback_locale' => 'nl',
 
+    'supported_locales' => [
+        'nl' => [
+            'name' => 'Nederlands',
+            'flag'  => 'netherlands',
+            'url' => 'nl',
+            'urldatatables' => '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Dutch.json',
+        ],
+        'en' => [
+            'name' => 'English',
+            'flag'  => 'england',
+            'url' => 'en',
+            'urldatatables' => '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/English.json',
+        ],
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Faker Locale

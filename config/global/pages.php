@@ -116,6 +116,18 @@ return array(
             ),
         ),
 
+        'bedrijf' => array(
+            'title'  => 'Bedrijf overzicht',
+            'view'   => 'account/bedrijf/overview',
+            'assets' => array(
+                'custom' => array(
+                    'js' => array(
+                        'js/custom/widgets.js',
+                    ),
+                ),
+            ),
+        ),
+
         'settings' => array(
             'title'  => 'Account Settings',
             'assets' => array(
@@ -154,7 +166,8 @@ return array(
                     ),
                     'js'  => array(
                         'plugins/custom/datatables/datatables.bundle.js',
-                        'js/custom/apps/user-management/users/list/table.js',
+                        'js/custom/apps/user-management/users/list/export-users.js',
+                        'js/custom/apps/user-management/users/list/add.js',
                     ),
                 ),
             ),

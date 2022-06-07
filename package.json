@@ -1,12 +1,12 @@
 {
     "private": true,
     "scripts": {
-        "dev": "npm run development --demo4",
-        "development": "mix --demo4",
-        "watch": "npm run watch --demo4",
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "npm run watch",
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
-        "prod": "npm run production --demo4",
+        "prod": "npm run production",
         "production": "mix --production"
     },
     "dependencies": {

@@ -5,9 +5,12 @@ namespace App\Http\Controllers\Account;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Account\SettingsEmailRequest;
 use App\Http\Requests\Account\SettingsInfoRequest;
+use App\Http\Requests\Account\SettingsInfoCompanyRequest;
 use App\Http\Requests\Account\SettingsPasswordRequest;
 use App\Models\UserInfo;
 use App\Models\User;
+use App\Models\Company;
+use App\Models\CompanyInfo;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
@@ -23,9 +26,14 @@ class SettingsController extends Controller
      */
     public function index()
     {
+        $info = auth()->user()->info;
+
+        $bedrijf = auth()->user()->company;
+
+        $bedrijfsinfo = auth()->user()->company->info;
 
         // get the default inner page
-        return view('pages.account.settings.settings', compact('info'));
+        return view('pages.account.settings.settings', compact('info','bedrijf','bedrijfsinfo'));
     }
 
     /**
@@ -79,7 +87,57 @@ class SettingsController extends Controller
 
         return redirect()->intended('account/settings');
     }
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $user
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function updateCompany(SettingsInfoCompanyRequest $request)
+    {
+        // save user name
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+        ]);
 
+        auth()->user()->company->update($validated);
+
+        // save on user info
+        $info = CompanyInfo::where('company_id', auth()->user()->company->id)->first();
+
+        if ($info === null) {
+            // create new model
+            $info = new CompanyInfo();
+        }
+
+        // attach this info to the current user
+        $info->company()->associate(auth()->user()->company);
+
+        foreach ($request->only(array_keys($request->rules())) as $key => $value) {
+            if (is_array($value)) {
+                $value = serialize($value);
+            }
+            $info->$key = $value;
+        }
+
+        if($request->hasFile('logo') && $request->file('logo')->isValid()){
+            $info->media()->delete();
+            $info->addMediaFromRequest('logo')->toMediaCollection('logo');
+            $url = $info->getFirstMediaUrl('logo', 'thumb');
+            $info->logo = $url;
+        }
+
+        if ($request->boolean('logo_remove')) {
+            $info->media()->delete();
+            $info->logo = null;
+        }
+
+        $info->save();
+
+        return redirect()->intended('account/settings');
+    }
     /**
      * Function for upload avatar image
      *

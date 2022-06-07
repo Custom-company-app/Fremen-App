@@ -36,6 +36,12 @@ array_walk($menu, function ($val) {
         }
     }
 });
+// Change language
+Route::get('language/{locale}', function ($locale) {
+    app()->setLocale($locale);
+    session()->put('locale', $locale);
+    return redirect()->back();
+})->name('language');
 
 // Documentations pages
 Route::prefix('documentation')->group(function () {
@@ -48,6 +54,7 @@ Route::middleware('auth')->group(function () {
     Route::prefix('account')->group(function () {
         Route::get('settings', [SettingsController::class, 'index'])->name('settings.index');
         Route::put('settings', [SettingsController::class, 'update'])->name('settings.update');
+        Route::put('settings/company', [SettingsController::class, 'updateCompany'])->name('settings.updateCompany');
         Route::put('settings/email', [SettingsController::class, 'changeEmail'])->name('settings.changeEmail');
         Route::put('settings/password', [SettingsController::class, 'changePassword'])->name('settings.changePassword');
     });

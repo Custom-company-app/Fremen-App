@@ -63,6 +63,11 @@ return array(
                         'bullet' => '<span class="bullet bullet-dot"></span>',
                     ),
                     array(
+                        'title'  => 'Bedrijf',
+                        'path'   => 'account/bedrijf',
+                        'bullet' => '<span class="bullet bullet-dot"></span>',
+                    ),
+                    array(
                         'title'  => 'Settings',
                         'path'   => 'account/settings',
                         'bullet' => '<span class="bullet bullet-dot"></span>',

@@ -5,4 +5,5 @@
 {{-- Inject Scripts --}}
 @section('scripts')
     {{ $dataTable->scripts() }}
+    {{ $dataTable->scripts() }}
 @endsection
