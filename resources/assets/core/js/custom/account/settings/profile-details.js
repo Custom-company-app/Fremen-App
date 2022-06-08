@@ -108,15 +108,26 @@ var KTAccountSettingsProfileDetails = function () {
             validation.validate().then(function (status) {
                 if (status == 'Valid') {
 
-                    swal.fire({
-                        text: "Thank you! You've updated your basic info",
-                        icon: "success",
-                        buttonsStyling: false,
-                        confirmButtonText: "Ok, got it!",
-                        customClass: {
-                            confirmButton: "btn fw-bold btn-light-primary"
-                        }
-                    });
+                    toastr.options = {
+                        "closeButton": true,
+                        "debug": false,
+                        "newestOnTop": true,
+                        "progressBar": true,
+                        "positionClass": "toastr-top-right",
+                        "preventDuplicates": true,
+                        "onclick": null,
+                        "showDuration": "300",
+                        "hideDuration": "1000",
+                        "timeOut": "5000",
+                        "extendedTimeOut": "1000",
+                        "showEasing": "swing",
+                        "hideEasing": "linear",
+                        "showMethod": "fadeIn",
+                        "hideMethod": "fadeOut"
+                    };
+
+                    toastr.success("Gegevens zijn opgeslagen", "Gelukt!");
+
 
                 } else {
                     swal.fire({

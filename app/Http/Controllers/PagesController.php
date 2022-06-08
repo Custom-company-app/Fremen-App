@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\File;
+use Flasher\Toastr\Prime\ToastrFactory;
 
 class PagesController extends Controller
 {
@@ -23,6 +24,19 @@ class PagesController extends Controller
 
         // Get the default inner page
         return redirect('/');
+    }
+
+    /**
+     * Test wizard
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function wizardTest(ToastrFactory $flasher)
+    {
+        $flasher->addFlash('error', 'Data has been saved successfully!',__('Gelukt'),array('closeButton'=>true));
+
+        return view('wizards.iniFremen.index');
+
     }
 
     /**

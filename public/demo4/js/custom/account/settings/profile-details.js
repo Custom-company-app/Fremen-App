@@ -102,18 +102,25 @@ var KTAccountSettingsProfileDetails = function () {
                     axios.post(submitButton.closest('form').getAttribute('action'), new FormData(form))
                         .then(function (response) {
                             // Show message popup. For more info check the plugin's official documentation: https://sweetalert2.github.io/
-                            Swal.fire({
-                                text: "Thank you! You've updated your basic info",
-                                icon: "success",
-                                buttonsStyling: false,
-                                confirmButtonText: "Ok, got it!",
-                                customClass: {
-                                    confirmButton: "btn btn-primary"
-                                }
-                            }).then(function (result) {
-                                if (result.isConfirmed) {
-                                }
-                            });
+                            toastr.options = {
+                                "closeButton": true,
+                                "debug": false,
+                                "newestOnTop": true,
+                                "progressBar": true,
+                                "positionClass": "toastr-top-right",
+                                "preventDuplicates": true,
+                                "onclick": null,
+                                "showDuration": "300",
+                                "hideDuration": "1000",
+                                "timeOut": "5000",
+                                "extendedTimeOut": "1000",
+                                "showEasing": "swing",
+                                "hideEasing": "linear",
+                                "showMethod": "fadeIn",
+                                "hideMethod": "fadeOut"
+                            };
+
+                            toastr.success("Gegevens zijn opgeslagen", "Gelukt!");
                         })
                         .catch(function (error) {
                             let dataMessage = error.response.data.message;

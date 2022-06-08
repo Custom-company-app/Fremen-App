@@ -49,6 +49,8 @@ Route::prefix('documentation')->group(function () {
     Route::get('getting-started/changelog', [PagesController::class, 'index']);
 });
 
+
+
 Route::middleware('auth')->group(function () {
     // Account pages
     Route::prefix('account')->group(function () {
@@ -64,6 +66,8 @@ Route::middleware('auth')->group(function () {
         Route::resource('system', SystemLogsController::class)->only(['index', 'destroy']);
         Route::resource('audit', AuditLogsController::class)->only(['index', 'destroy']);
     });
+
+    Route::get('wizard/firsttimelogin', [PagesController::class, 'wizardTest']);
 
 });
 

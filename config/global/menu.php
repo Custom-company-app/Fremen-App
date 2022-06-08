@@ -418,12 +418,5 @@ return array(
                 ),
             ),
         ),
-
-        //team
-        array(
-            'title'      => 'Mijn team',
-            'classes'    => array('item' => 'me-lg-1'),
-            'path'   => 'teams/huidig',
-        ),
     ),
 );

@@ -27,9 +27,9 @@ return array(
         ),
 
         // Account
-        'account'   => array(
-            "breadcrumb-title" => "Account",
-            "icon"             => '<i class="bi bi-shield-check fs-2"></i>',
+        'team'   => array(
+            "breadcrumb-title" => "Team",
+            "icon"             => '<i class="bi bi-people-fill fs-2"></i>',
             "classes"          => array(
                 "item" => "py-2",
                 "link" => "menu-center",
@@ -42,7 +42,7 @@ return array(
                     "data-kt-menu-flip"      => "bottom",
                 ),
                 'link' => array(
-                    "title"             => "Account",
+                    "title"             => "Team",
                     "data-bs-toggle"    => "tooltip",
                     "data-bs-trigger"   => "hover",
                     "data-bs-dismiss"   => "click",
@@ -55,21 +55,11 @@ return array(
                 "items" => array(
                     array(
                         'classes' => array('content' => ''),
-                        'content' => '<span class="menu-section fs-5 fw-bolder ps-1 py-1">Account</span>',
+                        'content' => '<span class="menu-section fs-5 fw-bolder ps-1 py-1">Team</span>',
                     ),
                     array(
-                        'title'  => 'Overview',
-                        'path'   => 'account/overview',
-                        'bullet' => '<span class="bullet bullet-dot"></span>',
-                    ),
-                    array(
-                        'title'  => 'Bedrijf',
-                        'path'   => 'account/bedrijf',
-                        'bullet' => '<span class="bullet bullet-dot"></span>',
-                    ),
-                    array(
-                        'title'  => 'Settings',
-                        'path'   => 'account/settings',
+                        'title'  => 'Mijn team',
+                        'path'   => 'teams/huidig',
                         'bullet' => '<span class="bullet bullet-dot"></span>',
                     ),
                 ),
