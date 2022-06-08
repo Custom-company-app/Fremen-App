@@ -17,7 +17,7 @@ var KTPasswordResetGeneral = function () {
                     'email': {
                         validators: {
                             notEmpty: {
-                                message: 'Email address is required'
+                                message: Lang.get('resetPasswordJs.valEmailReq')
                             },
                             emailAddress: {
                                 message: 'The value is not a valid email address'

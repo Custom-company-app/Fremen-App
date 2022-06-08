@@ -38,4 +38,5 @@
         </div>
         <!--end::Authentication-->
     </div>
+
 @endsection

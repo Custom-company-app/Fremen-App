@@ -47,7 +47,12 @@
         @if(theme()->getOption('layout', 'scrolltop/display') === true)
             {{ theme()->getView('layout/_scrolltop') }}
         @endif
+        <!--begin::Cookie alert-->
+
+        <!--end::Cookie alert-->
     @endif
     <!--end::Main-->
+
+
 
 @endsection

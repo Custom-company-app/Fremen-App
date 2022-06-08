@@ -21,9 +21,10 @@ return [
         '__',
         '_t',
         '@lang',
+        '_',
     ],
 
-    // Indicates whether you need to sort the translations alphabetically 
+    // Indicates whether you need to sort the translations alphabetically
     // by original strings (keys).
     // It helps navigate a translation file and detect possible duplicates.
     'sort-keys' => true,
@@ -44,5 +45,5 @@ return [
     // The criterion of whether a string is untranslated is
     // if its key and value are equivalent.
     // If sorting is enabled, untranslated and translated strings are sorted separately.
-    'put-untranslated-strings-at-the-top' => false,
+    'put-untranslated-strings-at-the-top' => true,
 ];

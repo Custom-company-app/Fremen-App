@@ -108,6 +108,9 @@ module.exports = [
     // Axios - Promise based HTTP client for the browser and node.js
     'node_modules/axios/dist/axios.js',
 
+    // language Js
+    'resources/assets/core/plugins/lang/messages.js',
+
 ];
 
 // window.axios.defaults.headers.common = {
