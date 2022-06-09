@@ -99,5 +99,6 @@ License: {{ theme()->getOption('product', 'license') }}
 
 @yield('scripts')
 </body>
+
 {{-- end::Body --}}
 </html>

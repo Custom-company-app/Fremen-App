@@ -158,6 +158,8 @@
       <path value="$PROJECT_DIR$/vendor/php-flasher/flasher" />
       <path value="$PROJECT_DIR$/vendor/tedivm/jshrink" />
       <path value="$PROJECT_DIR$/vendor/mariuzzo/laravel-js-localization" />
+      <path value="$PROJECT_DIR$/vendor/socialiteproviders/manager" />
+      <path value="$PROJECT_DIR$/vendor/socialiteproviders/microsoft-azure" />
     </include_path>
   </component>
   <component name="PhpUnit">

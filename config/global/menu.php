@@ -221,7 +221,7 @@ return array(
                 'class' => 'menu-sub-accordion menu-active-bg',
                 'items' => array(
                     array(
-                        'title'  => 'Overview',
+                        'title'  => 'menu.overzicht',
                         'path'   => 'account/overview',
                         'bullet' => '<span class="bullet bullet-dot"></span>',
                     ),
@@ -352,7 +352,7 @@ return array(
                 'class' => 'menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-rounded-0 py-lg-4 w-lg-225px',
                 'items' => array(
                     array(
-                        'title'  => 'Overview',
+                        'title'  => 'menu.overzicht',
                         'path'   => 'account/overview',
                         'bullet' => '<span class="bullet bullet-dot"></span>',
                     ),

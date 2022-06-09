@@ -194,9 +194,11 @@ class Menu {
         echo '<span ' . Util::getHtmlClass($classes) . '>';
 
         if ( isset($this->callbacks['title']) && is_callable($this->callbacks['title']) ) {
-            echo call_user_func($this->callbacks['title'], $item, $item['title']);
+            echo call_user_func(__($this->callbacks['title']), $item, __($item['title']));
         } else {
             echo __($item['title']);
+
+
             // Append exclusive badge
             if (isset($item['path']) && Theme::isExclusivePage($item['path']) === true) {
                 echo '<span class="badge badge-exclusive badge-light-success fw-bold fs-9 px-2 py-1 ms-1">Exclusive</span>';

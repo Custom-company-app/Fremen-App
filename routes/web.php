@@ -51,7 +51,7 @@ Route::prefix('documentation')->group(function () {
 
 
 
-Route::middleware('auth')->group(function () {
+Route::middleware('auth','verified')->group(function () {
     // Account pages
     Route::prefix('account')->group(function () {
         Route::get('settings', [SettingsController::class, 'index'])->name('settings.index');
@@ -78,6 +78,7 @@ Route::resource('users', UsersController::class);
  * https://laravel.com/docs/8.x/socialite
  */
 Route::get('/auth/redirect/{provider}', [SocialiteLoginController::class, 'redirect']);
+
 
 require __DIR__.'/auth.php';
 

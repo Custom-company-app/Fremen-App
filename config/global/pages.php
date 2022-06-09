@@ -114,7 +114,7 @@ return array(
 
     'account' => array(
         'overview' => array(
-            'title' => 'Account Overview',
+            'title' => 'menu.account_overzicht',
             'view' => 'account/overview/overview',
             'assets' => array(
                 'custom' => array(
@@ -342,6 +342,14 @@ return array(
                 'custom' => array(
                     'js' => array(
                         'js/custom/utilities/wizards/init-fremen.js',
+                    ),
+                ),
+            ),
+            'layout' => array(
+                'main' => array(
+                    'type' => 'blank', // Set blank layout
+                    'body' => array(
+                        'class' => theme()->isDarkMode() ? '' : 'bg-body',
                     ),
                 ),
             ),

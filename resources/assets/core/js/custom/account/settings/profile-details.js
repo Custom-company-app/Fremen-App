@@ -7,8 +7,13 @@ var KTAccountSettingsProfileDetails = function () {
     var submitButton;
     var validation;
 
+
+
+
     // Private functions
     var initValidation = function () {
+
+
         // Init form validation rules. For more info check the FormValidation plugin's official documentation:https://formvalidation.io/
         validation = FormValidation.formValidation(
             form,
@@ -150,6 +155,8 @@ var KTAccountSettingsProfileDetails = function () {
             form = document.getElementById('kt_account_profile_details_form');
             submitButton = form.querySelector('#kt_account_profile_details_submit');
 
+
+
             initValidation();
         }
     }
@@ -158,4 +165,6 @@ var KTAccountSettingsProfileDetails = function () {
 // On document ready
 KTUtil.onDOMContentLoaded(function() {
     KTAccountSettingsProfileDetails.init();
+
+
 });

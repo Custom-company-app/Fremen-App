@@ -3903,7 +3903,7 @@ button.toastr-close-button {
   transition: border-color 0.1s, box-shadow 0.1s;
   border: 1px solid #d9d9d9;
   border-radius: 0.1875em;
-  background: inherit;
+  background: transparent;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.06), 0 0 0 3px transparent;
   color: inherit;
   font-size: 1.125em;
@@ -3963,7 +3963,7 @@ button.toastr-close-button {
   width: 75%;
   margin-right: auto;
   margin-left: auto;
-  background: inherit;
+  background: transparent;
   font-size: 1.125em;
 }
 
@@ -3976,7 +3976,7 @@ button.toastr-close-button {
   min-width: 50%;
   max-width: 100%;
   padding: 0.375em 0.625em;
-  background: inherit;
+  background: transparent;
   color: inherit;
   font-size: 1.125em;
 }
@@ -4207,7 +4207,7 @@ button.toastr-close-button {
   max-width: 100%;
   margin: 1.25em auto;
   padding: 0;
-  background: inherit;
+  background: transparent;
   font-weight: 600;
 }
 .swal2-progress-steps li {
@@ -11419,14 +11419,15 @@ readers do not read off random characters that represent icons */
 
 @font-face {
   font-family: "bootstrap-icons";
-  src: url(./fonts/bootstrap-icons/bootstrap-icons.woff2?524846017b983fc8ded9325d94ed40f3) format("woff2"),
-url(./fonts/bootstrap-icons/bootstrap-icons.woff?524846017b983fc8ded9325d94ed40f3) format("woff");
+  src: url(./fonts/bootstrap-icons/bootstrap-icons.woff2?08efbba7c53d8c5413793eecb19b20bb) format("woff2"),
+url(./fonts/bootstrap-icons/bootstrap-icons.woff?08efbba7c53d8c5413793eecb19b20bb) format("woff");
 }
 
 .bi::before,
 [class^="bi-"]::before,
 [class*=" bi-"]::before {
   display: inline-block;
+  font-display: block;
   font-family: bootstrap-icons !important;
   font-style: normal;
   font-weight: normal !important;

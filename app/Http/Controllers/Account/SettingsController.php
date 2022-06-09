@@ -30,7 +30,11 @@ class SettingsController extends Controller
 
         $bedrijf = auth()->user()->company;
 
-        $bedrijfsinfo = auth()->user()->company->info;
+        $bedrijfsinfo = '';
+
+        if ($bedrijf){$bedrijfsinfo = auth()->user()->company->info;}
+
+
 
         // get the default inner page
         return view('pages.account.settings.settings', compact('info','bedrijf','bedrijfsinfo'));
