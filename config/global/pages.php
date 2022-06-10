@@ -114,7 +114,7 @@ return array(
 
     'account' => array(
         'overview' => array(
-            'title' => 'menu.account_overzicht',
+            'title' => 'page.account_overzicht',
             'view' => 'account/overview/overview',
             'assets' => array(
                 'custom' => array(

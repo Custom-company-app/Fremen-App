@@ -30,13 +30,13 @@ return [
             'profile' => 'c,r,u',
             'company' => 'r',
         ],
-        'companyuser' => [
+        'teamuser' => [
             'users' => 'r,u',
             'profile' => 'r,u',
             'teams' => 'c,r,u',
             'company' => 'r',
         ],
-        'companyclient' => [
+        'teamclient' => [
             'users' => 'r',
             'profile' => 'r,u',
             'teams' => 'r',

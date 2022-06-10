@@ -297,7 +297,8 @@ class Theme extends \App\Core\Theme
      */
     public static function getPageTitle()
     {
-        return theme()->getOption('page', 'title');
+        $title = theme()->getOption('page', 'title');
+        return __($title);
     }
 
     /**

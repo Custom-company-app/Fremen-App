@@ -251,6 +251,7 @@ return array(
         // System
         array(
             'title'      => 'System',
+            "role" => "administrator",
             'icon'       => array(
                 'svg'  => theme()->getSvgIcon("demo1/media/icons/duotune/general/gen025.svg", "svg-icon-2"),
                 'font' => '<i class="bi bi-layers fs-3"></i>',
@@ -315,6 +316,7 @@ return array(
         // Resources
         array(
             'title'      => 'Resources',
+            "role" => "administrator",
             'classes'    => array('item' => 'menu-lg-down-accordion me-lg-1', 'arrow' => 'd-lg-none'),
             'attributes' => array(
                 'data-kt-menu-trigger'   => "click",

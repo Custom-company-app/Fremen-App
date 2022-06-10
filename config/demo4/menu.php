@@ -68,6 +68,7 @@ return array(
 
         // System
         'system'    => array(
+            "role" => "administrator",
             "breadcrumb-title" => "System",
             "icon"             => '<i class="bi bi-file-earmark-lock fs-2"></i>',
             "classes"          => array(
@@ -90,7 +91,6 @@ return array(
                 ),
             ),
             "arrow"            => false,
-            "role" => "superadmin",
             "sub"              => array(
                 "class" => "menu-sub-dropdown w-225px px-1 py-4",
                 "items" => array(
@@ -114,6 +114,7 @@ return array(
 
         // Resources
         'resources' => array(
+            "role" => "administrator",
             "breadcrumb-title" => "Resources",
             "icon"             => '<i class="bi bi-gear fs-2"></i>',
             "classes"          => array(

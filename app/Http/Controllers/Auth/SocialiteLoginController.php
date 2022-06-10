@@ -33,7 +33,6 @@ class SocialiteLoginController extends Controller
 //        }
 
 
-
         // request login from social site
         return Socialite::driver($provider)->redirect();
     }
@@ -44,9 +43,6 @@ class SocialiteLoginController extends Controller
         try {
             // get user info from social site
             $social_info = Socialite::driver($provider)->stateless()->user();
-
-
-
 
 
         } catch (\Exception $e) {
@@ -62,7 +58,7 @@ class SocialiteLoginController extends Controller
         if ($existing_user) {
             auth()->login($existing_user, true);
 
-            if (!$existing_user->company_id){
+            if (!$existing_user->company_id) {
                 return view('wizards.iniFremen.index');
             }
 
@@ -86,12 +82,12 @@ class SocialiteLoginController extends Controller
         if (!$user) {
             $user = User::create([
                 'first_name' => $social_info->user["givenName"] ?? '',
-                'last_name'  => $social_info->user["surname"] ?? '',
-                'email'      => $social_info->email,
-                'password'   => Hash::make($social_info->id),
+                'last_name' => $social_info->user["surname"] ?? '',
+                'email' => $social_info->email,
+                'password' => Hash::make($social_info->id),
             ]);
 
-            $user_info         = new UserInfo;
+            $user_info = new UserInfo;
             $user_info->avatar = $social_info->getAvatar();
             $user_info->phone = $social_info->user["mobilePhone"] ?? '';
             $user_info->user()->associate($user);
