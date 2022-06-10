@@ -46,8 +46,8 @@ class UsersByTeamDataTable extends DataTable
                         'administrator' => __('Super admin'),
                         'companyadministrator'     => __('Bedrijfs administrator'),
                         'teamadministrator'  => __('Team administrator'),
-                        'companyuser'     => __('Medewerker'),
-                        'companyclient'   => __('Klant'),
+                        'teamuser'     => __('Medewerker'),
+                        'teamclient'   => __('Klant'),
                         'user'    => __('Gebruiker'),
                     ];
                     $value = $roles[$role->name];
