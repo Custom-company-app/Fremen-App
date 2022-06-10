@@ -97,7 +97,7 @@ class UsersSeeder extends Seeder
 
         $teamuser->attachTeam(1);
 
-        $teamuser->attachRole('companyuser', 1);
+        $teamuser->attachRole('teamuser', 1);
 
         $company = Company::factory()->create();
 
@@ -120,7 +120,7 @@ class UsersSeeder extends Seeder
 
         $teamcontact->attachTeam(1);
 
-        $teamcontact->attachRole('companyclient', 1);
+        $teamcontact->attachRole('teamclient', 1);
 
         $company = Company::factory()->create();
 
@@ -136,7 +136,7 @@ class UsersSeeder extends Seeder
 
             $user->attachTeam(1);
 
-            $user->attachRole('companyclient', 1);
+            $user->attachRole('teamclient', 1);
 
             $company = Company::factory()->create();
 
@@ -156,7 +156,7 @@ class UsersSeeder extends Seeder
 
             $user->attachTeam(1);
 
-            $user->attachRole('companyuser', 1);
+            $user->attachRole('teamuser', 1);
 
             $company = Company::factory()->create();
 
