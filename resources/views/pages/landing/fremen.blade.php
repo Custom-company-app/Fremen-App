@@ -8,8 +8,8 @@
         <!--begin::Header Section-->
         <div class="mb-0" id="home">
             <!--begin::Wrapper-->
-            <div class="bgi-no-repeat bgi-size-contain bgi-position-x-center bgi-position-y-bottom bg-primary"
-                 style="background-image: url({{ asset(theme()->getMediaUrlPath() . 'svg/illustrations/landing.svg') }})">
+            <div class="bgi-no-repeat bgi-size-cover bgi-position-x-center bgi-position-y-bottom bg-primary"
+                 style="background-image: url({{ asset(theme()->getMediaUrlPath() . 'svg/shapes/wave-bg-dark.svg') }})">
                 <!--begin::Header-->
                 <div class="landing-header" data-kt-sticky="true" data-kt-sticky-name="landing-header"
                      data-kt-sticky-offset="{default: '200px', lg: '300px'}">
@@ -39,7 +39,7 @@
                                 <!--end::Mobile menu toggle-->
                                 <!--begin::Logo image-->
                                 <a href="{{ theme()->getPageUrl('') }}">
-                                    <img alt="Logo" src="{{ asset(theme()->getMediaUrlPath() . 'logos/logo-3.svg') }}"
+                                    <img alt="Logo" src="{{ asset(theme()->getMediaUrlPath() . 'logos/logo-1-dark.svg') }}"
                                          class="logo-default h-50px h-lg-50px"/>
                                     <img alt="Logo" src="{{ asset(theme()->getMediaUrlPath() . 'logos/logo-1.svg') }}"
                                          class="logo-sticky h-50px h-lg-50px"/>
@@ -80,7 +80,7 @@
                                         <!--begin::Menu item-->
                                         <div class="menu-item">
                                             <!--begin::Menu link-->
-                                            <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#achievements"
+                                            <a class="menu-link nav-link text-hover-light py-3 px-4 px-xxl-6" href="#achievements"
                                                data-kt-scroll-toggle="true"
                                                data-kt-drawer-dismiss="true">Achievements</a>
                                             <!--end::Menu link-->
@@ -148,12 +148,12 @@
                     <div class="d-flex flex-center flex-wrap position-relative px-5">
                         <!--begin::Client-->
                         <div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="Fujifilm">
-                            <img src="assets/media/svg/brand-logos/fujifilm.svg" class="mh-30px mh-lg-40px" alt=""/>
+                            <img src="{{ asset(theme()->getMediaUrlPath() . 'svg/brand-logos/fujifilm.svg') }}" class="mh-30px mh-lg-40px" alt=""/>
                         </div>
                         <!--end::Client-->
                         <!--begin::Client-->
                         <div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="Vodafone">
-                            <img src="assets/media/svg/brand-logos/vodafone.svg" class="mh-30px mh-lg-40px" alt=""/>
+                            <img src="{{ asset(theme()->getMediaUrlPath() . 'svg/brand-logos/vodafone.svg') }}" class="mh-30px mh-lg-40px" alt=""/>
                         </div>
                         <!--end::Client-->
                         <!--begin::Client-->

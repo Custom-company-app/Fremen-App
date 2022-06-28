@@ -358,7 +358,7 @@ return array(
 
     'landing' => array(
             'title' => 'Huidig team',
-            'meta' => array('title'=>'Wizard Init Fremen'),
+            'meta' => array('title'=>'Fremen'),
             'assets' => array(
                 'custom' => array(
                     'js' => array(
