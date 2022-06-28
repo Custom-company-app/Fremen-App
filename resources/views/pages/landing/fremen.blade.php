@@ -118,7 +118,7 @@
                             <!--begin::Toolbar-->
                             <div class="flex-equal text-end ms-1">
                                 <a href="{{ route('login') }}"
-                                   class="btn btn-success">{{ __('Inloggen') }}</a>
+                                   class="btn btn-secondary">{{ __('Inloggen') }}</a>
                             </div>
                             <!--end::Toolbar-->
                         </div>
@@ -147,46 +147,26 @@
                     <!--begin::Clients-->
                     <div class="d-flex flex-center flex-wrap position-relative px-5">
                         <!--begin::Client-->
-                        <div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="Fujifilm">
-                            <img src="{{ asset(theme()->getMediaUrlPath() . 'svg/brand-logos/fujifilm.svg') }}" class="mh-30px mh-lg-40px" alt=""/>
+                        <div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="KPN B.V.">
+                            <img src="{{ asset(theme()->getMediaUrlPath() . 'svg/brand-logos/kpn.svg') }}" class="mh-30px mh-lg-40px" alt=""/>
                         </div>
                         <!--end::Client-->
                         <!--begin::Client-->
-                        <div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="Vodafone">
-                            <img src="{{ asset(theme()->getMediaUrlPath() . 'svg/brand-logos/vodafone.svg') }}" class="mh-30px mh-lg-40px" alt=""/>
+                        <div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="Nationale Politie">
+                            <img src="{{ asset(theme()->getMediaUrlPath() . 'svg/brand-logos/politie.svg') }}" class="mh-120px mh-lg-100px" alt=""/>
                         </div>
                         <!--end::Client-->
                         <!--begin::Client-->
-                        <div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="KPMG International">
-                            <img src="assets/media/svg/brand-logos/kpmg.svg" class="mh-30px mh-lg-40px" alt=""/>
+                        <div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="ICTU">
+                            <img src="{{ asset(theme()->getMediaUrlPath() . 'svg/brand-logos/ictu.svg') }}" class="mh-30px mh-lg-40px" alt=""/>
                         </div>
                         <!--end::Client-->
                         <!--begin::Client-->
-                        <div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="Nasa">
-                            <img src="assets/media/svg/brand-logos/nasa.svg" class="mh-30px mh-lg-40px" alt=""/>
+                        <div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="NS">
+                            <img src="{{ asset(theme()->getMediaUrlPath() . 'svg/brand-logos/ns.svg') }}" class="mh-30px mh-lg-40px" alt=""/>
                         </div>
                         <!--end::Client-->
-                        <!--begin::Client-->
-                        <div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="Aspnetzero">
-                            <img src="assets/media/svg/brand-logos/aspnetzero.svg" class="mh-30px mh-lg-40px" alt=""/>
-                        </div>
-                        <!--end::Client-->
-                        <!--begin::Client-->
-                        <div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip"
-                             title="AON - Empower Results">
-                            <img src="assets/media/svg/brand-logos/aon.svg" class="mh-30px mh-lg-40px" alt=""/>
-                        </div>
-                        <!--end::Client-->
-                        <!--begin::Client-->
-                        <div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="Hewlett-Packard">
-                            <img src="assets/media/svg/brand-logos/hp-3.svg" class="mh-30px mh-lg-40px" alt=""/>
-                        </div>
-                        <!--end::Client-->
-                        <!--begin::Client-->
-                        <div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="Truman">
-                            <img src="assets/media/svg/brand-logos/truman.svg" class="mh-30px mh-lg-40px" alt=""/>
-                        </div>
-                        <!--end::Client-->
+
                     </div>
                     <!--end::Clients-->
                 </div>
@@ -228,7 +208,7 @@
                         <!--begin::Story-->
                         <div class="text-center mb-10 mb-md-0">
                             <!--begin::Illustration-->
-                            <img src="assets/media/illustrations/sketchy-1/2.png" class="mh-125px mb-9" alt=""/>
+                            <img src="{{ asset(theme()->getMediaUrlPath() . 'illustrations/sketchy-1/2.png') }}" class="mh-125px mb-9" alt=""/>
                             <!--end::Illustration-->
                             <!--begin::Heading-->
                             <div class="d-flex flex-center mb-5">
@@ -255,7 +235,7 @@
                         <!--begin::Story-->
                         <div class="text-center mb-10 mb-md-0">
                             <!--begin::Illustration-->
-                            <img src="assets/media/illustrations/sketchy-1/8.png" class="mh-125px mb-9" alt=""/>
+                            <img src="{{ asset(theme()->getMediaUrlPath() . 'illustrations/sketchy-1/8.png') }}" class="mh-125px mb-9" alt=""/>
                             <!--end::Illustration-->
                             <!--begin::Heading-->
                             <div class="d-flex flex-center mb-5">
@@ -282,7 +262,7 @@
                         <!--begin::Story-->
                         <div class="text-center mb-10 mb-md-0">
                             <!--begin::Illustration-->
-                            <img src="assets/media/illustrations/sketchy-1/12.png" class="mh-125px mb-9" alt=""/>
+                            <img src="{{ asset(theme()->getMediaUrlPath() . 'illustrations/sketchy-1/12.png') }}" class="mh-125px mb-9" alt=""/>
                             <!--end::Illustration-->
                             <!--begin::Heading-->
                             <div class="d-flex flex-center mb-5">
@@ -315,22 +295,22 @@
                          data-tns-prev-button="#kt_team_slider_prev1" data-tns-next-button="#kt_team_slider_next1">
                         <!--begin::Item-->
                         <div class="text-center px-5 pt-5 pt-lg-10 px-lg-10">
-                            <img src="assets/media/product-demos/demo1.png" class="card-rounded shadow mw-100" alt=""/>
+                            <img src="{{ asset(theme()->getMediaUrlPath() . 'product-demos/demo1.png') }}" class="card-rounded shadow mw-100" alt=""/>
                         </div>
                         <!--end::Item-->
                         <!--begin::Item-->
                         <div class="text-center px-5 pt-5 pt-lg-10 px-lg-10">
-                            <img src="assets/media/product-demos/demo2.png" class="card-rounded shadow mw-100" alt=""/>
+                            <img src="{{ asset(theme()->getMediaUrlPath() . 'product-demos/demo2.png') }}" class="card-rounded shadow mw-100" alt=""/>
                         </div>
                         <!--end::Item-->
                         <!--begin::Item-->
                         <div class="text-center px-5 pt-5 pt-lg-10 px-lg-10">
-                            <img src="assets/media/product-demos/demo4.png" class="card-rounded shadow mw-100" alt=""/>
+                            <img src="{{ asset(theme()->getMediaUrlPath() . 'product-demos/demo4.png') }}" class="card-rounded shadow mw-100" alt=""/>
                         </div>
                         <!--end::Item-->
                         <!--begin::Item-->
                         <div class="text-center px-5 pt-5 pt-lg-10 px-lg-10">
-                            <img src="assets/media/product-demos/demo5.png" class="card-rounded shadow mw-100" alt=""/>
+                            <img src="{{ asset(theme()->getMediaUrlPath() . 'product-demos/demo5.png') }}" class="card-rounded shadow mw-100" alt=""/>
                         </div>
                         <!--end::Item-->
                     </div>
@@ -578,7 +558,7 @@
                             <!--begin::Photo-->
                             <div
                                 class="octagon mx-auto mb-5 d-flex w-200px h-200px bgi-no-repeat bgi-size-contain bgi-position-center"
-                                style="background-image:url('assets/media/avatars/300-1.jpg')"></div>
+                                style="background-image:url('{{ asset(theme()->getMediaUrlPath() . 'avatars/300-1.jpg') }}')"></div>
                             <!--end::Photo-->
                             <!--begin::Person-->
                             <div class="mb-0">
@@ -597,7 +577,7 @@
                             <!--begin::Photo-->
                             <div
                                 class="octagon mx-auto mb-5 d-flex w-200px h-200px bgi-no-repeat bgi-size-contain bgi-position-center"
-                                style="background-image:url('assets/media/avatars/300-2.jpg')"></div>
+                                style="background-image:url('{{ asset(theme()->getMediaUrlPath() . 'avatars/300-2.jpg') }}')"></div>
                             <!--end::Photo-->
                             <!--begin::Person-->
                             <div class="mb-0">
@@ -616,7 +596,7 @@
                             <!--begin::Photo-->
                             <div
                                 class="octagon mx-auto mb-5 d-flex w-200px h-200px bgi-no-repeat bgi-size-contain bgi-position-center"
-                                style="background-image:url('assets/media/avatars/300-5.jpg')"></div>
+                                style="background-image:url('{{ asset(theme()->getMediaUrlPath() . 'avatars/300-5.jpg') }}')"></div>
                             <!--end::Photo-->
                             <!--begin::Person-->
                             <div class="mb-0">
@@ -635,7 +615,7 @@
                             <!--begin::Photo-->
                             <div
                                 class="octagon mx-auto mb-5 d-flex w-200px h-200px bgi-no-repeat bgi-size-contain bgi-position-center"
-                                style="background-image:url('assets/media/avatars/300-20.jpg')"></div>
+                                style="background-image:url('{{ asset(theme()->getMediaUrlPath() . 'avatars/300-20.jpg') }}')"></div>
                             <!--end::Photo-->
                             <!--begin::Person-->
                             <div class="mb-0">
@@ -654,7 +634,7 @@
                             <!--begin::Photo-->
                             <div
                                 class="octagon mx-auto mb-5 d-flex w-200px h-200px bgi-no-repeat bgi-size-contain bgi-position-center"
-                                style="background-image:url('assets/media/avatars/300-23.jpg')"></div>
+                                style="background-image:url('{{ asset(theme()->getMediaUrlPath() . 'avatars/300-23.jpg') }}')"></div>
                             <!--end::Photo-->
                             <!--begin::Person-->
                             <div class="mb-0">
@@ -673,7 +653,7 @@
                             <!--begin::Photo-->
                             <div
                                 class="octagon mx-auto mb-5 d-flex w-200px h-200px bgi-no-repeat bgi-size-contain bgi-position-center"
-                                style="background-image:url('assets/media/avatars/300-12.jpg')"></div>
+                                style="background-image:url('{{ asset(theme()->getMediaUrlPath() . 'avatars/300-12.jpg') }}')"></div>
                             <!--end::Photo-->
                             <!--begin::Person-->
                             <div class="mb-0">
@@ -692,7 +672,7 @@
                             <!--begin::Photo-->
                             <div
                                 class="octagon mx-auto mb-5 d-flex w-200px h-200px bgi-no-repeat bgi-size-contain bgi-position-center"
-                                style="background-image:url('assets/media/avatars/300-9.jpg')"></div>
+                                style="background-image:url('{{ asset(theme()->getMediaUrlPath() . 'avatars/300-9.jpg') }}')"></div>
                             <!--end::Photo-->
                             <!--begin::Person-->
                             <div class="mb-0">
@@ -795,11 +775,11 @@
                                         <!--begin::Item-->
                                         <a class="d-block card-rounded overlay h-lg-100"
                                            data-fslightbox="lightbox-projects"
-                                           href="assets/media/stock/600x600/img-23.jpg">
+                                           href="{{ asset(theme()->getMediaUrlPath() . 'stock/600x600/img-23.jpg') }}">
                                             <!--begin::Image-->
                                             <div
                                                 class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded h-lg-100 min-h-250px"
-                                                style="background-image:url('assets/media/stock/600x600/img-23.jpg')"></div>
+                                                style="background-image:url('{{ asset(theme()->getMediaUrlPath() . 'stock/600x600/img-23.jpg') }}')"></div>
                                             <!--end::Image-->
                                             <!--begin::Action-->
                                             <div class="overlay-layer card-rounded bg-dark bg-opacity-25">
@@ -819,11 +799,11 @@
                                                 <!--begin::Item-->
                                                 <a class="d-block card-rounded overlay"
                                                    data-fslightbox="lightbox-projects"
-                                                   href="assets/media/stock/600x600/img-22.jpg">
+                                                   href="{{ asset(theme()->getMediaUrlPath() . 'stock/600x600/img-22.jpg') }}">
                                                     <!--begin::Image-->
                                                     <div
                                                         class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded h-250px"
-                                                        style="background-image:url('assets/media/stock/600x600/img-22.jpg')"></div>
+                                                        style="background-image:url('{{ asset(theme()->getMediaUrlPath() . 'stock/600x600/img-22.jpg') }}')"></div>
                                                     <!--end::Image-->
                                                     <!--begin::Action-->
                                                     <div class="overlay-layer card-rounded bg-dark bg-opacity-25">
@@ -839,11 +819,11 @@
                                                 <!--begin::Item-->
                                                 <a class="d-block card-rounded overlay"
                                                    data-fslightbox="lightbox-projects"
-                                                   href="assets/media/stock/600x600/img-21.jpg">
+                                                   href="{{ asset(theme()->getMediaUrlPath() . 'stock/600x600/img-21.jpg') }}">
                                                     <!--begin::Image-->
                                                     <div
                                                         class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded h-250px"
-                                                        style="background-image:url('assets/media/stock/600x600/img-21.jpg')"></div>
+                                                        style="background-image:url('{{ asset(theme()->getMediaUrlPath() . 'stock/600x600/img-21.jpg') }}')"></div>
                                                     <!--end::Image-->
                                                     <!--begin::Action-->
                                                     <div class="overlay-layer card-rounded bg-dark bg-opacity-25">
@@ -858,11 +838,11 @@
                                         <!--end::Row-->
                                         <!--begin::Item-->
                                         <a class="d-block card-rounded overlay" data-fslightbox="lightbox-projects"
-                                           href="assets/media/stock/600x400/img-20.jpg">
+                                           href="{{ asset(theme()->getMediaUrlPath() . 'stock/600x600/img-20.jpg') }}">
                                             <!--begin::Image-->
                                             <div
                                                 class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded h-250px"
-                                                style="background-image:url('assets/media/stock/600x600/img-20.jpg')"></div>
+                                                style="background-image:url('{{ asset(theme()->getMediaUrlPath() . 'stock/600x600/img-20.jpg') }}')"></div>
                                             <!--end::Image-->
                                             <!--begin::Action-->
                                             <div class="overlay-layer card-rounded bg-dark bg-opacity-25">
@@ -886,11 +866,11 @@
                                         <!--begin::Item-->
                                         <a class="d-block card-rounded overlay h-lg-100"
                                            data-fslightbox="lightbox-projects"
-                                           href="assets/media/stock/600x600/img-11.jpg">
+                                           href="{{ asset(theme()->getMediaUrlPath() . 'stock/600x600/img-11.jpg') }}">
                                             <!--begin::Image-->
                                             <div
                                                 class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded h-lg-100 min-h-250px"
-                                                style="background-image:url('assets/media/stock/600x600/img-11.jpg')"></div>
+                                                style="background-image:url('{{ asset(theme()->getMediaUrlPath() . 'stock/600x600/img-11.jpg') }}')"></div>
                                             <!--end::Image-->
                                             <!--begin::Action-->
                                             <div class="overlay-layer card-rounded bg-dark bg-opacity-25">
