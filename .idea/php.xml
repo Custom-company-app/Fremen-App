@@ -159,6 +159,9 @@
       <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
       <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
       <path value="$PROJECT_DIR$/vendor/spatie/backtrace" />
+      <path value="$PROJECT_DIR$/vendor/inertiajs/inertia-laravel" />
+      <path value="$PROJECT_DIR$/vendor/spatie/once" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-onboard" />
     </include_path>
   </component>
   <component name="PhpUnit">

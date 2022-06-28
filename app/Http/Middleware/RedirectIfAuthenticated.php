@@ -24,6 +24,11 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
+//                if (auth()->user()->onboarding()->inProgress()) {
+//                    return redirect()->to(
+//                        auth()->user()->onboarding()->nextUnfinishedStep()->link
+//                    );
+//                }
                 return redirect(theme()->getPageUrl(RouteServiceProvider::HOME));
             }
         }

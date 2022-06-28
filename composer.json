@@ -11,6 +11,7 @@
         "anlutro/l4-settings": "^1.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "inertiajs/inertia-laravel": "^0.6.3",
         "jackiedo/log-reader": "^2.2",
         "kkomelin/laravel-translatable-string-exporter": "^1.16",
         "laravel/framework": "^9.0",
@@ -24,12 +25,13 @@
         "socialiteproviders/microsoft-azure": "^5.1",
         "spatie/laravel-activitylog": "^4.0",
         "spatie/laravel-medialibrary": "^10.3",
+        "spatie/laravel-onboard": "^2.1",
         "yajra/laravel-datatables-buttons": "^4.10",
         "yajra/laravel-datatables-oracle": "~9.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.6",
-        "barryvdh/laravel-ide-helper": "^2.9",
+        "barryvdh/laravel-ide-helper": "^2.12",
         "fakerphp/faker": "^1.9.1",
         "laravel/breeze": "^1.0",
         "laravel/sail": "^1.0.1",

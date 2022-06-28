@@ -21,6 +21,8 @@ class SocialiteLoginController extends Controller
         Cookie::queue('redirect_uri', $redirect, 3);
 
 
+
+
         // redirect from social site
         if (request()->input('state')) {
             return $this->callback($provider);

@@ -5,6 +5,9 @@ namespace App\Providers;
 use App\Core\Adapters\Theme;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use App\Models\User;
+use Spatie\Onboard\Facades\Onboard;
+use Auth;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,6 +30,20 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
+        Onboard::addStep(_('Bedrijfgegevens'))
+            ->link('/profile')
+            ->cta('Aanmaken')
+            ->completeIf(function (User $user) {
+                return isset(Auth::user()->company_id);
+            });
+
+//        Onboard::addStep('Create Your First Post')
+//            ->link('/post/create')
+//            ->cta('Create Post')
+//            ->completeIf(function (User $user) {
+//                return $user->posts->count() > 0;
+//            });
         $theme = theme();
 
         // Share theme adapter class

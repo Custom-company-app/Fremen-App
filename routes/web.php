@@ -9,6 +9,7 @@ use App\Http\Controllers\TeamController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Auth\Middleware\Authenticate;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,10 +29,11 @@ use Illuminate\Support\Facades\Route;
 $menu = theme()->getMenu();
 array_walk($menu, function ($val) {
     if (isset($val['path'])) {
+
         $route = Route::get($val['path'], [PagesController::class, 'index']);
 
         // Exclude documentation from auth middleware
-        if (!Str::contains($val['path'], 'documentation')) {
+        if (!Str::contains($val['path'], 'documentation') || !Str::contains($val['path'], 'language')) {
             $route->middleware('auth');
         }
     }
@@ -104,3 +106,10 @@ Route::group(['prefix' => 'teams', 'namespace' => 'Teamwork'], function()
 
     Route::get('accept/{token}', [App\Http\Controllers\Teamwork\AuthController::class, 'acceptInvite'])->name('teams.accept_invite');
 });
+/**
+ * Landing routes
+ */
+
+Route::get('/landing', [PagesController::class, 'landing'])
+    ->middleware('guest')
+    ->name('landing');

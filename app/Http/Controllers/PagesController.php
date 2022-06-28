@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\File;
 use Flasher\Toastr\Prime\ToastrFactory;
+use Illuminate\Support\Facades\Auth;
+
 
 class PagesController extends Controller
 {
@@ -19,11 +21,30 @@ class PagesController extends Controller
 
         // Check if the page view file exist
         if (view()->exists('pages.'.$view)) {
+//            if (auth()->user()->onboarding()->inProgress()) {
+//                return redirect()->to(
+//                    auth()->user()->onboarding()->nextUnfinishedStep()->link
+//                );
+//            }
             return view('pages.'.$view);
         }
 
         // Get the default inner page
         return redirect('/');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function landing()
+    {
+        // Get view file location from menu config
+
+            return view('pages.landing.fremen');
+
+
     }
 
     /**

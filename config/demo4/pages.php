@@ -1,6 +1,6 @@
 <?php
 return array(
-    '' => array(
+    'dashboard' => array(
         'title'  => 'Dashboard',
         'view'   => 'index',
         'layout' => array(

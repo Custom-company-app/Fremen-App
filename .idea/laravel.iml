@@ -37,6 +37,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/promises" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/psr7" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/hamcrest/hamcrest-php" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/inertiajs/inertia-laravel" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/intervention/image" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/jackiedo/log-reader" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kkomelin/laravel-translatable-string-exporter" />
@@ -128,7 +129,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/spatie/laravel-activitylog" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/spatie/laravel-ignition" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/spatie/laravel-medialibrary" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/spatie/laravel-onboard" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/spatie/laravel-package-tools" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/spatie/once" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/spatie/temporary-directory" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/console" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/css-selector" />

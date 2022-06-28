@@ -196,7 +196,7 @@ class Menu {
         if ( isset($this->callbacks['title']) && is_callable($this->callbacks['title']) ) {
             echo call_user_func(__($this->callbacks['title']), $item, __($item['title']));
         } else {
-            echo __($item['title']);
+            echo $item['title'];
 
 
             // Append exclusive badge

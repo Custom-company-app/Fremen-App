@@ -11,6 +11,38 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\Image\Manipulations;
 
+/**
+ * App\Models\CompanyInfo
+ *
+ * @property int $id
+ * @property int|null $company_id
+ * @property string|null $phone
+ * @property string|null $website
+ * @property string|null $email
+ * @property string|null $country
+ * @property string|null $logo
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Spatie\Activitylog\Models\Activity[] $activities
+ * @property-read int|null $activities_count
+ * @property-read \App\Models\Company|null $company
+ * @property-read string $logo_url
+ * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|Media[] $media
+ * @property-read int|null $media_count
+ * @method static \Illuminate\Database\Eloquent\Builder|CompanyInfo newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|CompanyInfo newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|CompanyInfo query()
+ * @method static \Illuminate\Database\Eloquent\Builder|CompanyInfo whereCompanyId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CompanyInfo whereCountry($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CompanyInfo whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CompanyInfo whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CompanyInfo whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CompanyInfo whereLogo($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CompanyInfo wherePhone($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CompanyInfo whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CompanyInfo whereWebsite($value)
+ * @mixin \Eloquent
+ */
 class CompanyInfo extends Model implements HasMedia
 {
     use SpatieLogsActivity, InteractsWithMedia;

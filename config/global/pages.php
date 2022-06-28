@@ -355,4 +355,25 @@ return array(
             ),
         ),
     ),
+
+    'landing' => array(
+            'title' => 'Huidig team',
+            'meta' => array('title'=>'Wizard Init Fremen'),
+            'assets' => array(
+                'custom' => array(
+                    'js' => array(
+                        'js/custom/landing.js',
+                    ),
+                ),
+            ),
+            'layout' => array(
+                'main' => array(
+                    'type' => 'blank', // Set blank layout
+                    'body' => array(
+                        'class' => theme()->isDarkMode() ? '' : 'bg-body',
+                    ),
+                ),
+            ),
+
+    ),
 );
