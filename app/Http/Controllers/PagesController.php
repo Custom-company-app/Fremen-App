@@ -42,7 +42,7 @@ class PagesController extends Controller
     {
         // Get view file location from menu config
 
-            return view('pages.landing.fremen');
+        return redirect('https://itworkers.fremen.app/');
 
 
     }
