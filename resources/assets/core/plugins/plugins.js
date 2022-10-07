@@ -1,4 +1,5 @@
 //
+//
 // 3rd-Party Plugins JavaScript Includes
 //
 
@@ -106,6 +107,9 @@ module.exports = [
 
     // Axios - Promise based HTTP client for the browser and node.js
     'node_modules/axios/dist/axios.js',
+
+    // language Js
+    'resources/assets/core/plugins/lang/messages.js',
 
 ];
 

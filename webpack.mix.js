@@ -6,6 +6,7 @@ const rimraf = require('rimraf');
 const WebpackRTLPlugin = require('webpack-rtl-plugin');
 const del = require('del');
 const fs = require('fs');
+const WebpackShellPlugin = require('webpack-shell-plugin-next');
 
 /*
  |--------------------------------------------------------------------------
@@ -158,6 +159,7 @@ let plugins = [
             ],
         },
     ]),
+    new WebpackShellPlugin({onBuildStart:['php artisan lang:js --quiet'], onBuildEnd:[]}),
 ];
 if (args.indexOf('rtl') !== -1) {
     plugins.push(new WebpackRTLPlugin({

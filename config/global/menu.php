@@ -221,7 +221,7 @@ return array(
                 'class' => 'menu-sub-accordion menu-active-bg',
                 'items' => array(
                     array(
-                        'title'  => 'Overview',
+                        'title'  => 'menu.overzicht',
                         'path'   => 'account/overview',
                         'bullet' => '<span class="bullet bullet-dot"></span>',
                     ),
@@ -251,6 +251,7 @@ return array(
         // System
         array(
             'title'      => 'System',
+            "role" => "administrator",
             'icon'       => array(
                 'svg'  => theme()->getSvgIcon("demo1/media/icons/duotune/general/gen025.svg", "svg-icon-2"),
                 'font' => '<i class="bi bi-layers fs-3"></i>',
@@ -315,6 +316,7 @@ return array(
         // Resources
         array(
             'title'      => 'Resources',
+            "role" => "administrator",
             'classes'    => array('item' => 'menu-lg-down-accordion me-lg-1', 'arrow' => 'd-lg-none'),
             'attributes' => array(
                 'data-kt-menu-trigger'   => "click",
@@ -352,7 +354,7 @@ return array(
                 'class' => 'menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-rounded-0 py-lg-4 w-lg-225px',
                 'items' => array(
                     array(
-                        'title'  => 'Overview',
+                        'title'  => 'menu.overzicht',
                         'path'   => 'account/overview',
                         'bullet' => '<span class="bullet bullet-dot"></span>',
                     ),
@@ -383,6 +385,7 @@ return array(
         array(
             'title'      => 'System',
             'classes'    => array('item' => 'menu-lg-down-accordion me-lg-1', 'arrow' => 'd-lg-none'),
+            'role' => 'superadmin',
             'attributes' => array(
                 'data-kt-menu-trigger'   => "click",
                 'data-kt-menu-placement' => "bottom-start",

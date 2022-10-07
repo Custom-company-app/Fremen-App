@@ -26,8 +26,10 @@ class RolesSeeder extends Seeder
     public function data()
     {
         return [
-            ['name' => 'admin'],
-            ['name' => 'editor'],
+            ['name' => 'superadmin'],
+            ['name' => 'teamadmin'],
+            ['name' => 'teamuser'],
+            ['name' => 'teamcontact'],
         ];
     }
 }

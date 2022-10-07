@@ -297,7 +297,8 @@ class Theme extends \App\Core\Theme
      */
     public static function getPageTitle()
     {
-        return theme()->getOption('page', 'title');
+        $title = theme()->getOption('page', 'title');
+        return __($title);
     }
 
     /**
@@ -477,6 +478,7 @@ class Theme extends \App\Core\Theme
 
         if (isset($menus['path'])) {
             $output[] = $menus;
+
         }
 
         if (is_array($menus)) {

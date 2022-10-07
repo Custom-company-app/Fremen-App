@@ -5,18 +5,20 @@ return array(
         'favicon' => 'media/logos/favicon.ico',
         'fonts'   => array(
             'google' => array(
-                'Poppins:300,400,500,600,700',
+                'Encode+Sans:300,400,500,600,700',
             ),
         ),
         'css'     => array(
             'plugins/global/plugins.bundle.css',
             'plugins/global/plugins-custom.bundle.css',
+            'plugins/custom/cookiealert/cookiealert.bundle.css',
             'css/style.bundle.css',
         ),
         'js'      => array(
             'plugins/global/plugins.bundle.js',
             'js/scripts.bundle.js',
             'js/custom/widgets.js',
+    'plugins/custom/cookiealert/cookiealert.bundle.js',
         ),
     ),
 
@@ -26,7 +28,7 @@ return array(
         'main'       => array(
             'type'              => 'default', // Set layout type: default|blank|none
             'dark-mode-enabled' => false, // Enable optioanl dark mode mode
-            'primary-color'     => '#7239EA',
+            'primary-color'     => '#7C2A8B',
         ),
 
         // Loader

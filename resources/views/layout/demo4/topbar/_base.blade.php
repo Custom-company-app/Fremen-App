@@ -27,10 +27,10 @@
     <div class="d-flex align-items-center {{ $toolbarButtonMarginClass }}">
         <!--begin::Menu wrapper-->
         <div class="btn btn-icon btn-active-light-primary {{ $toolbarButtonHeightClass }}" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
-            {!! theme()->getSvgIcon("icons/duotune/general/gen025.svg", $toolbarButtonIconSizeClass) !!}
+            {!! theme()->getSvgIcon("icons/duotune/communication/com014.svg", $toolbarButtonIconSizeClass) !!}
         </div>
 
-    {{ theme()->getView('partials/topbar/_quick-links-menu', array('quick-bg' => 'misc/header-bg-demo4.png')) }}
+    {{ theme()->getView('partials/topbar/_teams-menu', array('quick-bg' => 'misc/header-bg-demo4.png')) }}
     <!--end::Menu wrapper-->
     </div>
     <!--end::Quick links-->
@@ -65,7 +65,7 @@
     <div class="d-flex align-items-center {{ $toolbarButtonMarginClass }}" id="kt_header_user_menu_toggle">
         <!--begin::Menu wrapper-->
         <div class="cursor-pointer symbol {{ $toolbarUserAvatarHeightClass }}" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
-            <img src="{{ auth()->user()->avatar_url }}" alt="avatar"/>
+            <img class="rounded-circle" src="{{ auth()->user()->avatar_url }}" alt="avatar"/>
         </div>
     {{ theme()->getView('partials/topbar/_user-menu') }}
     <!--end::Menu wrapper-->

@@ -11,7 +11,7 @@
 
     <!--begin::Heading-->
     <h1 class="text-dark fw-bolder my-1 fs-3 lh-1">
-        {{ theme()->getOption('page', 'title') }}
+        {{ __(theme()->getOption('page', 'title')) }}
         @if (theme()->getOption('layout', 'page-title/description') && theme()->hasOption('page', 'description'))
             <small class="text-muted fs-6 fw-normal ms-1">{{ theme()->getOption('page', 'description') }}</small>
         @endif

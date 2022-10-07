@@ -188,15 +188,17 @@ class Menu {
         }
 
         if (!is_string($item['title']) && is_callable($item['title'])) {
-            $item['title'] = call_user_func($item['title'], $item);
+            $item['title'] = call_user_func(__($item['title']), $item);
         }
 
         echo '<span ' . Util::getHtmlClass($classes) . '>';
 
         if ( isset($this->callbacks['title']) && is_callable($this->callbacks['title']) ) {
-            echo call_user_func($this->callbacks['title'], $item, $item['title']);
+            echo call_user_func(__($this->callbacks['title']), $item, __($item['title']));
         } else {
-            echo __($item['title']);
+            echo $item['title'];
+
+
             // Append exclusive badge
             if (isset($item['path']) && Theme::isExclusivePage($item['path']) === true) {
                 echo '<span class="badge badge-exclusive badge-light-success fw-bold fs-9 px-2 py-1 ms-1">Exclusive</span>';
@@ -380,9 +382,9 @@ class Menu {
                 $title = $item['breadcrumb-title'];
             } else if (isset($item['title'])) {
                 if (!is_string($item['title']) && is_callable($item['title'])) {
-                    $title = call_user_func($item['title'], $item);
+                    $title = call_user_func(__($item['title']), $item);
                 } else {
-                    $title = $item['title'];
+                    $title = __($item['title']);
                 }
             } else if (isset($item['heading'])) {
                 $title = $item['heading'];
@@ -391,7 +393,7 @@ class Menu {
             if ( isset($item['path']) && ($item['path'] === $this->path || $item['path'] . '/index' === $this->path)) {
                 if (@$options['skip-active'] !== true) {
                     $breadcrumb[] = array(
-                        'title' => $title,
+                        'title' => __($title),
                         'path' => isset($item['path']) ? $item['path'] : '',
                         'active' => true
                     );
@@ -402,7 +404,7 @@ class Menu {
             } else if ( isset($item['sub']) && isset($item['sub']['items']) ) {
                 if ( $this->_buildBreadcrumb($item['sub']['items'], $breadcrumb, $options, $level++) === true) {
                     $breadcrumb[] = array(
-                        'title' => $title,
+                        'title' => __($title),
                         'path' => isset($item['path']) ? $item['path'] : ( isset($item['alt-path']) ? $item['alt-path'] : ''),
                         'active' => false
                     );
@@ -444,7 +446,7 @@ class Menu {
                 array_unshift($breadcrumb, $options['home']);
             } else {
                 array_unshift($breadcrumb, array(
-                    'title' => 'Home',
+                    'title' => __('Home'),
                     'path' => 'index',
                     'active' => false
                 ));

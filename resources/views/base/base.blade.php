@@ -1,20 +1,14 @@
 <!DOCTYPE html>
 {{--
 Product Name: {{ theme()->getOption('product', 'description') }}
-Author: KeenThemes
-Purchase: {{ theme()->getOption('product', 'purchase') }}
-Website: http://www.keenthemes.com/
-Contact: support@keenthemes.com
-Follow: www.twitter.com/keenthemes
-Dribbble: www.dribbble.com/keenthemes
-Like: www.facebook.com/keenthemes
+Author: Markza
 License: {{ theme()->getOption('product', 'license') }}
 --}}
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}"{!! theme()->printHtmlAttributes('html') !!} {{ theme()->printHtmlClasses('html') }}>
 {{-- begin::Head --}}
 <head>
     <meta charset="utf-8"/>
-    <title>{{ ucfirst(theme()->getOption('meta', 'title')) }} | Keenthemes</title>
+    <title>{{ ucfirst(theme()->getOption('meta', 'title')) }} | Fremen</title>
     <meta name="description" content="{{ ucfirst(theme()->getOption('meta', 'description')) }}"/>
     <meta name="keywords" content="{{ theme()->getOption('meta', 'keywords') }}"/>
     <link rel="canonical" href="{{ ucfirst(theme()->getOption('meta', 'canonical')) }}"/>
@@ -71,6 +65,8 @@ License: {{ theme()->getOption('product', 'license') }}
 @endif
 
 @yield('content')
+{{ theme()->getView('partials/general/_cookieNotice') }}
+
 
 {{-- begin::Javascript --}}
 @if (theme()->hasOption('assets', 'js'))
@@ -98,11 +94,11 @@ License: {{ theme()->getOption('product', 'license') }}
 @endif
 {{-- end::Javascript --}}
 
-@if (theme()->getViewMode() === 'preview')
-    {{ theme()->getView('partials/trackers/_ga-tag-manager-for-body') }}
-@endif
+
+
 
 @yield('scripts')
 </body>
+
 {{-- end::Body --}}
 </html>

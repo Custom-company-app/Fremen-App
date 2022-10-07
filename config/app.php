@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'CET',
 
     /*
     |--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'nl',
 
     /*
     |--------------------------------------------------------------------------
@@ -93,7 +93,22 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'nl',
+
+    'supported_locales' => [
+        'nl' => [
+            'name' => 'Nederlands',
+            'flag'  => 'netherlands',
+            'url' => 'nl',
+            'urldatatables' => '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Dutch.json',
+        ],
+        'en' => [
+            'name' => 'English',
+            'flag'  => 'england',
+            'url' => 'en',
+            'urldatatables' => '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/English.json',
+        ],
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -106,7 +121,7 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
+    'faker_locale' => 'nl_NL',
 
     /*
     |--------------------------------------------------------------------------
@@ -161,10 +176,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
-        /*
-         * Package Service Providers...
-         */
+        Mariuzzo\LaravelJsLocalization\LaravelJsLocalizationServiceProvider::class,
 
         /*
          * Application Service Providers...

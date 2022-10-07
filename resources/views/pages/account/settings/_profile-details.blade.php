@@ -27,9 +27,9 @@
                     <!--begin::Col-->
                     <div class="col-lg-8">
                         <!--begin::Image input-->
-                        <div class="image-input image-input-outline {{ isset($info) && $info->avatar ? '' : 'image-input-empty' }}" data-kt-image-input="true" style="background-image: url({{ asset(theme()->getMediaUrlPath() . 'avatars/blank.png') }})">
+                        <div class="image-input image-input-circle {{ isset($info) && $info->avatar ? '' : 'image-input-empty' }}" data-kt-image-input="true" style="background-image: url({{ asset(theme()->getMediaUrlPath() . 'avatars/blank.png') }})">
                             <!--begin::Preview existing avatar-->
-                            <div class="image-input-wrapper w-125px h-125px" style="background-image: {{ isset($info) && $info->avatar_url ? 'url('.asset($info->avatar_url).')' : 'none' }};"></div>
+                            <div class="image-input-wrapper w-125px h-125px" style="background-image: {{ isset($info) && $info->avatar ? 'url('.$info->getFirstMediaUrl('avatar', 'thumb').')' : 'none' }};"></div>
                             <!--end::Preview existing avatar-->
 
                             <!--begin::Label-->
@@ -285,10 +285,10 @@
 
             <!--begin::Actions-->
             <div class="card-footer d-flex justify-content-end py-6 px-9">
-                <button type="reset" class="btn btn-white btn-active-light-primary me-2">{{ __('Discard') }}</button>
+                <button type="reset" class="btn btn-white btn-active-light-primary me-2">{{ __('Annuleer') }}</button>
 
                 <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">
-                    @include('partials.general._button-indicator', ['label' => __('Save Changes')])
+                    @include('partials.general._button-indicator', ['label' => __('Opslaan')])
                 </button>
             </div>
             <!--end::Actions-->

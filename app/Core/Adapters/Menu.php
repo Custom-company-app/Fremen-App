@@ -21,7 +21,7 @@ class Menu extends \App\Core\Menu
     }
 
     /**
-     * Filter menu item based on the user permission using Spatie plugin
+     * Filter menu item based on the user permission using Laratrust plugin
      *
      * @param $array
      */
@@ -36,8 +36,8 @@ class Menu extends \App\Core\Menu
         $checkPermission = $checkRole = false;
         if (auth()->check()) {
             // check if the spatie plugin functions exist
-            $checkPermission = method_exists($user, 'hasAnyPermission');
-            $checkRole       = method_exists($user, 'hasAnyRole');
+            $checkPermission = method_exists($user, 'isAbleTo');
+            $checkRole       = method_exists($user, 'hasRole');
         }
 
         foreach ($array as $key => &$value) {
@@ -45,11 +45,11 @@ class Menu extends \App\Core\Menu
                 continue;
             }
 
-            if ($checkPermission && isset($value['permission']) && !$user->hasAnyPermission((array) $value['permission'])) {
+            if ($checkPermission && isset($value['permission']) && !$user->isAbleTo((array) $value['permission'])) {
                 unset($array[$key]);
             }
 
-            if ($checkRole && isset($value['role']) && !$user->hasAnyRole((array) $value['role'])) {
+            if ($checkRole && isset($value['role']) && !$user->hasRole((array) $value['role'])) {
                 unset($array[$key]);
             }
 
